@@ -4,14 +4,14 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 public class PixelCalculator : MonoBehaviour {
-	public int ScreenIndex;
 	public Transform ScreenA,ScreenB,ScreenC;
 	
 
 	// Use this for initialization
-	void Start () {
-		
-	}
+private void Update() {
+	PixelManager.Instance.SelectOperator();
+	Calculate();
+}
 	
 	// Update is called once per frame
 	public void Calculate () {
@@ -39,7 +39,7 @@ public class PixelCalculator : MonoBehaviour {
 				case 0 : return (Mathf.Max(pixelA,pixelB)) == pixelB ? 1 : 0; break;
 				case 1 : return (pixelA < pixelB) ? 1 : 0; break;
 				case 2 : return (pixelA > pixelB) ? 1 : 0; break;
-				case 3 : return (pixelA <= pixelB) ? 1 : 0; break;
+				case 3 : return (pixelB <= pixelA) ? 1 : 0; break;
 				case 4 : return (pixelA >= pixelB) ? 0 : 1; break;
 				case 5 : return (pixelA == pixelB) ? 1 : 0; break;
 				case 6 : return (pixelA != pixelB) ? 1 : 0; break;

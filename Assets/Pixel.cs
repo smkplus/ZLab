@@ -10,7 +10,7 @@ public class Pixel : MonoBehaviour,IPointerEnterHandler {
 	public bool Allow = true;
 
 private void Awake() {
-		ScreenIndex = transform.parent.GetComponent<PixelCalculator>().ScreenIndex;
+		ScreenIndex = transform.parent.GetComponent<Screen>().ScreenIndex;
 }
 public void OnPointerEnter(PointerEventData eventData)
     { 
